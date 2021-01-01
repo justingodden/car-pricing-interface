@@ -4,19 +4,18 @@ import ContentBody from './components/ContentBody';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
+
+      <div className="top-bar">
+        <h1>Machine Learning Car Valuation</h1>
+        <h2 className="carValue">Car Price: £1000</h2>
+      </div>
+
       <ContentBody />
       
-      
-      <form>
-            <h1>hi</h1>
-            <select name="hi" id="hi" disabled={false}>
-                    <option value="" disabled selected>--</option>
-                    <option value="hi">helloooooooo</option>
-                    
-            </select>
-        </form>
-
+      <button className="submitButton">
+          <h2>Predict Car Value</h2>
+        </button>
 
     </div>
   );
