@@ -1,11 +1,11 @@
 import React from 'react'
+import makeModelSelect from '../data/makeModelSelect'
 
-export default function ValueSelect({ name, values }) {
+export default function MakeModelSelect() {
     return (
-        <form >
+        <form>
             <h1>{ name }</h1>
-            <select name={ name } id={ name } onSelect={console.log("hi")}>
-                <option value="" disabled selected>---</option>
+            <select name={ name } id={ name }>
                 { values.map((value, i) => (
                     <option value={value}>{value.charAt(0).toUpperCase() + value.slice(1)}</option>
                     ))

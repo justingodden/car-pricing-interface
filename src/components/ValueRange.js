@@ -14,6 +14,7 @@ export default function ValueRange({ name, values }) {
         <form>
             <h1>{ name }</h1>
             <select name={ name } id={ name }>
+                <option value="" disabled selected>---</option>
                 { arr.map((value, i) => (
                     <option value={value}>{value}</option>
                     ))
