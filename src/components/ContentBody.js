@@ -1,29 +1,23 @@
 import React from 'react'
-
-const carMakes = ["audi", "bmw", "mercedes"]
+import data from '../data/data'
 
 export default function ContentBody() {
-    
-
-
-    return (
-        <div>
-            <form>
-                <h3>Input something</h3>
-                <input type="text"/>
-            </form>
-
-
-
-            <form>
-                <h3>Car Make</h3>
-                <select name="make" id="make">
-                    {carMakes.map((make, i) => (
-                        <option value={make}>{make}</option>
-                        ))
-                    }
-                </select>
-            </form>
-        </div>
+        return (
+            data.map((field, i) => {
+                if (field.type === 'select') return (
+                    <form>
+                        <h1>{field.name}</h1>
+                        <select name={field.name} id={field.name}>
+                            {field.values.map((value, i) => (
+                                <option value={value}>{value}</option>
+                                ))
+                                }
+                        </select>
+                    </form>
+                    
+                )
+                }
+            )
+                
     )
 }
