@@ -8,21 +8,21 @@ import MakeModelSelect from './MakeModelSelect'
 export default function ContentBody() {
         return (
             <>
-            <MakeModelSelect />
-            {
-            fieldNames.map((field, i) => {
-                if (field.type === 'select') return (
-                    <ValueSelect name={field.name} values={field.values} /> 
+                <MakeModelSelect />
+                {
+                fieldNames.map((field, i) => {
+                    if (field.type === 'select') return (
+                        <ValueSelect name={field.name} values={field.values} /> 
+                    )
+                    else if (field.type === 'input') return (
+                        <ValueInput name={field.name} /> 
+                    )
+                    else return (
+                        <ValueRange name={field.name} values={field.values} />
+                    )
+                }
                 )
-                else if (field.type === 'input') return (
-                    <ValueInput name={field.name} /> 
-                )
-                else return (
-                    <ValueRange name={field.name} values={field.values} />
-                )
-            }
-            )
-        }
+                }
             </>
         )
 }

@@ -10,8 +10,8 @@ export default function ValueSelect({ name, values }) {
             <form >
                 <select className='form-select' >
                     <option value="" disabled selected>---</option>
-                    { values.map((value, _) => (
-                        <option value={value} key={ value }>{capitalize(value)}</option>
+                    { values.map((value, i) => (
+                        <option value={value} key={ i }>{capitalize(value)}</option>
                         ))
                     }
                 </select>
