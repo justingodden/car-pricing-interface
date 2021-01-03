@@ -29,10 +29,10 @@ body {
     align-items: center;
     background: #161a2b;
     width: 500px;
-    min-height: 800px;
+    min-height: 850px;
     border-radius: 10px;
     box-shadow: 5px 5px 25px #161a2b;
-    padding: 10px;
+    padding: 10px 10px 40px 10px;
 }
 
 .top-bar {
@@ -93,25 +93,3 @@ body {
     padding: 20px;
     margin-top: 10px;
 }
-
-
-/* .App {
-    display: flex;
-    flex-wrap: wrap;
-    justify-items: center;
-    flex-direction: row;
-    justify-content: start;
-    width: 520px;
-    min-height: 600px;
-    background: #161a2b;
-    text-align: center;
-    margin: 128px auto;
-    border-radius: 10px;
-    padding-bottom: 32px;
-}
-
-h1 {
-    margin: 32px 0;
-    color: #ffffff;
-    font-size: 24px;
-} */

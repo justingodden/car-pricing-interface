@@ -1,23 +1,5 @@
 export default [
     {
-        name: "make",
-        type: 'select',
-        values: [
-            "audi",
-            "bmw",
-            "mercedes"
-        ]
-    },
-    {
-        name: "model",
-        type: 'select',
-        values: [
-            "fiesta",
-            "golf",
-            "focus"
-        ]
-    },
-    {
         name: "reg year",
         type: 'range',
         values: [

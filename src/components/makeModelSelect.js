@@ -1,16 +1,24 @@
-import React from 'react'
-import makeModelSelect from '../data/makeModelSelect'
+import React, { useState } from 'react'
+import ValueSelect from './ValueSelect'
+import carMakesModels from '../data/carMakesModels'
+import fieldNames from '../data/fieldNames'
+import capitalize from '../utils/capitalize'
+
+const makes = []
+
+carMakesModels.forEach(obj => makes.push(obj.make))
+
+let passData = undefined
 
 export default function MakeModelSelect() {
+
+    const [input, setInput] = useState(undefined)
+    function onEventChange(input) {
+        setInput(input)
+    }
     return (
-        <form>
-            <h1>{ name }</h1>
-            <select name={ name } id={ name }>
-                { values.map((value, i) => (
-                    <option value={value}>{value.charAt(0).toUpperCase() + value.slice(1)}</option>
-                    ))
-                }
-            </select>
-        </form>
+        <div className="fieldBlock">
+            <ValueSelect name="Make" values={makes} onEventChange={onEventChange}/> 
+        </div>
     )
 }

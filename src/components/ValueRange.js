@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import capitalize from '../utils/capitalize'
 
 function range(start, stop) {
@@ -10,15 +10,16 @@ function range(start, stop) {
 }
 
 export default function ValueRange({ name, values }) {
+    const [input, setInput] = useState(null)
     const arr = range(values[0], values[1])
     return (
         <div className="fieldBlock">
-            <h3>{ capitalize(name) }</h3>
+            <h3>{ capitalize(name) + " " + input}</h3>
             <form>
-                <select className='form-select' name={ name } id={ name }>
-                    <option value="" disabled selected>---</option>
-                    { arr.map((value, i) => (
-                        <option value={value}>{value}</option>
+                <select className='form-select' onChange={e => setInput(e.target.value)}>
+                    <option value="" disabled defaultValue>---</option>
+                    { arr.map((value, _) => (
+                        <option value={value} key={value}>{value}</option>
                         ))
                     }
                 </select>
