@@ -1,24 +1,46 @@
 import React, { useState } from 'react'
-import ValueSelect from './ValueSelect'
 import carMakesModels from '../data/carMakesModels'
-import fieldNames from '../data/fieldNames'
 import capitalize from '../utils/capitalize'
 
 const makes = []
 
 carMakesModels.forEach(obj => makes.push(obj.make))
 
-let passData = undefined
-
 export default function MakeModelSelect() {
+    const [make, setMake] = useState(null)
+    const [models, setModels] = useState([])
 
-    const [input, setInput] = useState(undefined)
-    function onEventChange(input) {
-        setInput(input)
+    function handleMakeSelect(e) {
+        setMake(e.target.value)
+        setModels(carMakesModels.find(element => element.make === e.target.value).models) 
     }
     return (
-        <div className="fieldBlock">
-            <ValueSelect name="Make" values={makes} onEventChange={onEventChange}/> 
-        </div>
+        <>
+            <div className="fieldBlock">
+                <h3>Car Make</h3>
+                <form >
+                    <select className='form-select' onChange={handleMakeSelect}>
+                        <option value="" disabled selected>---</option>
+                        { makes.map((value, _) => (
+                            <option value={value} key={value}>{capitalize(value)}</option>
+                            ))
+                        }
+                    </select>
+                </form>
+            </div>
+
+            <div className="fieldBlock">
+                <h3>Car Model</h3>
+                <form >
+                    <select className='form-select' >
+                        <option value="" disabled selected>---</option>
+                        { make !== null && models.map((value, _) => (
+                            <option value={value} key={ value }defaultValue="---">{capitalize(value)}</option>
+                            ))
+                        }
+                    </select>
+                </form>
+            </div>
+        </>
     )
 }

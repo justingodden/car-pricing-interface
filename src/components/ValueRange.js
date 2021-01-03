@@ -17,7 +17,7 @@ export default function ValueRange({ name, values }) {
             <h3>{ capitalize(name) + " " + input}</h3>
             <form>
                 <select className='form-select' onChange={e => setInput(e.target.value)}>
-                    <option value="" disabled defaultValue>---</option>
+                    <option value="" disabled selected>---</option>
                     { arr.map((value, _) => (
                         <option value={value} key={value}>{value}</option>
                         ))

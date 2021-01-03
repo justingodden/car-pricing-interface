@@ -10,7 +10,8 @@ export default function ValueSelect({ name }) {
             <h3>{ capitalize(name) + " " + input}</h3>
             <form>
                 <input className='form-input' type="text" placeholder="---"
-                onChange={e => setInput(e.target.value)}/>
+                onChange={e => setInput(e.target.value)}
+                />
             </form>
         </div>
     )
