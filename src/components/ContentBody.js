@@ -8,7 +8,7 @@ import MakeModelSelect from './MakeModelSelect'
 export default function ContentBody() {
         return (
             <>
-            {/* <MakeModelSelect /> */}
+            <MakeModelSelect />
             {
             fieldNames.map((field, i) => {
                 if (field.type === 'select') return (
