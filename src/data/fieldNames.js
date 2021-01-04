@@ -1,6 +1,6 @@
 export default [
     {
-        name: "reg year",
+        name: "regYear",
         type: 'range',
         values: [
             2010,
@@ -13,7 +13,7 @@ export default [
         values: null,
     },
     {
-        name: "fuel type",
+        name: "fuelType",
         type: 'select',
         values: [
             "petrol",
@@ -32,7 +32,7 @@ export default [
         ]
     },
     {
-        name: "drive type",
+        name: "driveType",
         type: 'select',
         values: [
             "front wheel drive",
@@ -41,7 +41,7 @@ export default [
         ]
     },
     {
-        name: "previous owners",
+        name: "previousOwners",
         type: 'range',
         values: [
             1,

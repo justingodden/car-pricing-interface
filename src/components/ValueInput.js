@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import capitalize from '../utils/capitalize'
+import { CarContext } from '../context/CarContext';
 
 
 export default function ValueSelect({ name }) {
-    const [input, setInput] = useState([])
+    const [car, setCar] = useContext(CarContext)
 
-    const handleChange = e => {
-        setInput(e.target.value)
-        console.log(input)
+    function handleChange(e) {
+        let tempCar = car
+        tempCar.mileage = e.target.value
+        setCar(tempCar)
     }
 
     return (
