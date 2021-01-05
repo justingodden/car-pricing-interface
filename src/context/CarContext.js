@@ -13,8 +13,7 @@ export const CarProvider = props => {
                 fuelType: null,
                 transmission: null,
                 driveType: null,
-                previousOwners: null,
-                carValue: 2000
+                previousOwners: null
             }
         )
     return(
